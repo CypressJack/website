@@ -2,7 +2,7 @@ import Image from 'next/future/image'
 import logo from '../../public/images/logo.png'
 
 export function Logomark(props) {
-  return <Image src={logo} className="h-12 w-12" />
+  return <Image src={logo} className="h-12 w-12" alt="logo" />
 }
 
 export function Logo(props) {

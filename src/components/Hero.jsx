@@ -336,7 +336,7 @@ export function Hero() {
               Connect with your local customers, in Delta BC.
             </h1>
             <p className="mt-6 text-lg text-gray-400">
-              Build a online presence you're proud of, connect with new and existing customers, and maximise your businesses potential.
+              Build a online presence you’re proud of, connect with new and existing customers, and maximise your business potential.
             </p>
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-4">
               <AppStoreLink />
