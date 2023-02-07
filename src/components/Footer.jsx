@@ -22,11 +22,11 @@ function QrCodeBorder(props) {
 
 export function Footer() {
   return (
-    <footer className="border-t border-gray-200">
+    <footer className="border-t border-gray-200 bg-gray-900">
       <Container>
         <div className="flex flex-col items-start justify-between gap-y-12 pt-16 pb-6 lg:flex-row lg:items-center lg:py-16">
           <div>
-            <div className="flex items-center text-gray-900">
+            <div className="flex items-center text-white">
               <Logomark className="h-10 w-10 flex-none fill-cyan-500" />
               <div className="ml-4">
                 <p className="text-base font-semibold">Pocket</p>
@@ -49,7 +49,7 @@ export function Footer() {
                   Download the app
                 </Link>
               </p>
-              <p className="mt-1 text-sm text-gray-700">
+              <p className="mt-1 text-sm text-white">
                 Scan the QR code to download the app from the App Store.
               </p>
             </div>
