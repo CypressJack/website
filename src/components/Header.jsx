@@ -22,7 +22,7 @@ function MenuIcon(props) {
 
 function ChevronUpIcon(props) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
+    <svg viewBox="0 0 24 24"  aria-hidden="true" {...props}>
       <path
         d="M17 14l-5-5-5 5"
         strokeWidth={2}
@@ -37,7 +37,7 @@ function MobileNavLink({ children, ...props }) {
   return (
     <Popover.Button
       as={Link}
-      className="block text-base leading-7 tracking-tight text-white"
+      className="block text-base leading-7 tracking-tight text-grey-900"
       {...props}
     >
       {children}
@@ -65,7 +65,7 @@ export function Header() {
               {({ open }) => (
                 <>
                   <Popover.Button
-                    className="relative z-10 -m-2 inline-flex items-center rounded-lg stroke-gray-900 p-2 hover:bg-gray-200/50 hover:stroke-gray-600 active:stroke-gray-900 [&:not(:focus-visible)]:focus:outline-none"
+                    className="relative z-10 -m-2 inline-flex items-center fill-white rounded-lg stroke-white p-2 hover:bg-gray-200/50 hover:stroke-gray-600 active:stroke-gray-900 [&:not(:focus-visible)]:focus:outline-none"
                     aria-label="Toggle site navigation"
                   >
                     {({ open }) =>
