@@ -204,7 +204,7 @@ export function Pricing() {
             id="pricing-title"
             className="text-3xl font-medium tracking-tight text-white"
           >
-            Flat pricing, no management fees.
+            Up front pricing, guaranteed results.
           </h2>
           <p className="mt-2 text-lg text-gray-400">
             Whether you’re one person trying to get ahead or a big firm trying
