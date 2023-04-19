@@ -9,8 +9,12 @@ import { Pricing } from '@/components/Pricing'
 import { PrimaryFeatures } from '@/components/PrimaryFeatures'
 import { Reviews } from '@/components/Reviews'
 import { SecondaryFeatures } from '@/components/SecondaryFeatures'
+import PageSpeed from '@/components/PageSpeed'
+import { useState } from 'react'
 
 export default function Home() {
+  const [modalOpen, setModalOpen] = useState(false)
+
   return (
     <>
       <Head>
@@ -21,14 +25,15 @@ export default function Home() {
         />
       </Head>
       <Header />
-      <main>
-        <Hero />
+      <PageSpeed open={modalOpen} setOpen={setModalOpen} />
+      <main className="bg-gray-900">
+        <Hero modalOpen={modalOpen} setModalOpen={setModalOpen} />
         <PrimaryFeatures />
         <SecondaryFeatures />
         <CallToAction />
-        <Reviews />
-        <Pricing />
-        <Faqs />
+        {/* <Reviews /> */}
+        {/* <Pricing /> */}
+        {/* <Faqs /> */}
       </main>
       <Footer />
     </>

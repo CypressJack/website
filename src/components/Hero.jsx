@@ -7,7 +7,7 @@ import { AppStoreLink } from '@/components/AppStoreLink'
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { PhoneFrame } from '@/components/PhoneFrame'
-
+import { money } from '@/utils/currency';
 
 function BackgroundIllustration(props) {
   let id = useId()
@@ -91,12 +91,7 @@ function PlayIcon(props) {
   )
 }
 
-const prices = [
-  997.56, 944.34, 972.25, 832.4, 888.76, 834.8, 805.56, 767.38, 861.21, 669.6,
-  694.39, 721.32, 694.03, 610.1, 502.2, 549.56, 611.03, 583.4, 610.14, 660.6,
-  752.11, 721.19, 638.89, 661.7, 694.51, 580.3, 638.0, 613.3, 651.64, 560.51,
-  611.45, 670.68, 752.56,
-]
+const prices = [477, 1200, 2400, 3640, 4840, 7234, 8503, 12256]
 const maxPrice = Math.max(...prices)
 const minPrice = Math.min(...prices)
 
@@ -250,27 +245,15 @@ function AppDemo() {
     <AppScreen>
       <AppScreen.Body>
         <div className="p-4">
-          <div className="flex gap-2">
-            <div className="text-xs leading-6 text-gray-500">
-              Tailwind Labs, Inc.
-            </div>
-            <div className="text-sm text-gray-900">$CSS</div>
-            <svg viewBox="0 0 24 24" className="ml-auto h-6 w-6" fill="none">
-              <path
-                d="M5 12a7 7 0 1 1 14 0 7 7 0 0 1-14 0ZM12 9v6M15 12H9"
-                stroke="#171717"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </div>
-          <div className="mt-3 border-t border-gray-200 pt-5">
+          <div className="border-t border-gray-200 pt-5">
             <div className="flex items-baseline gap-2">
-              <div className="text-2xl tabular-nums tracking-tight text-gray-900">
-                {activeValue.toFixed(2)}
+              <div className="flex flex-col">
+                <span>Revenue</span>
+                <div className="text-2xl tabular-nums tracking-tight text-gray-900">
+                  {money(activeValue.toFixed(2))}
+                  <span className="text-sm text-gray-900 ml-2">CAD</span>
+                </div>
               </div>
-              <div className="text-sm text-gray-900">USD</div>
               {percentageChange && (
                 <div
                   className={clsx(
@@ -326,9 +309,9 @@ function AppDemo() {
   )
 }
 
-export function Hero() {
+export function Hero({modalOpen, setModalOpen}) {
   return (
-    <div className="overflow-hidden py-20 sm:py-32 lg:pb-32 xl:pb-36 bg-gray-900">
+    <div className="overflow-hidden bg-gray-900 py-20 sm:py-32 lg:pb-32 xl:pb-36">
       <Container>
         <div className="lg:grid lg:grid-cols-12 lg:gap-x-8 lg:gap-y-20">
           <div className="relative z-10 mx-auto max-w-2xl lg:col-span-7 lg:max-w-none lg:pt-6 xl:col-span-6">
@@ -336,16 +319,16 @@ export function Hero() {
               Connect with your local customers, in Delta BC.
             </h1>
             <p className="mt-6 text-lg text-gray-400">
-              Build a online presence you’re proud of, connect with new and existing customers, and maximise your business potential.
+              Build a online presence you’re proud of, connect with new and
+              existing customers, and maximise your business potential.
             </p>
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-4">
-              <AppStoreLink />
               <Button
-                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                onClick={()=>setModalOpen(true)}
                 variant="outline"
               >
                 <PlayIcon className="h-6 w-6 flex-none" />
-                <span className="ml-2.5 text-white">Watch the video</span>
+                <span className="ml-2.5 text-white text-base">Get a free website audit</span>
               </Button>
             </div>
           </div>
@@ -357,8 +340,7 @@ export function Hero() {
               </PhoneFrame>
             </div>
           </div>
-          <div className="relative h-12 -mt-4 lg:col-span-7 lg:mt-0 xl:col-span-6">
-          </div>
+          <div className="relative -mt-4 h-12 lg:col-span-7 lg:mt-0 xl:col-span-6"></div>
         </div>
       </Container>
     </div>

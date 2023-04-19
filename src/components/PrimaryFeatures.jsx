@@ -24,23 +24,24 @@ const MotionAppScreenBody = motion(AppScreen.Body)
 
 const features = [
   {
-    name: 'Rank higher in local searches',
+    name: 'Increase revenue',
     description:
-      'For every friend you invite to Pocket, you get insider notifications 5 seconds sooner. And it’s 10 seconds if you invite an insider.',
+      'Create a strong local presence, generate more impressions and revenue for your business.',
     icon: DeviceUserIcon,
     screen: InviteScreen,
   },
   {
-    name: 'Skyrocket engagement',
+    name: 'Grow your client-base',
+
     description:
-      'Get a push notification every time we find out something that’s going to lower the share price on your holdings so you can sell before the information hits the public markets.',
+    'Attract the customers that you want to work with and encourage referrals.',
     icon: DeviceNotificationIcon,
     screen: StocksScreen,
   },
   {
-    name: 'Become the local authority',
+    name: 'Rank higher in local searches',
     description:
-      'We hide your stock purchases behind thousands of anonymous trading accounts, so suspicious activity can never be traced back to you.',
+    'Increase the local visibility of your business by ranking higher on local searches.',
     icon: DeviceTouchIcon,
     screen: InvestScreen,
   },

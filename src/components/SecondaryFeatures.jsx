@@ -191,12 +191,12 @@ export function SecondaryFeatures() {
     <section
       id="secondary-features"
       aria-label="Features for building a portfolio"
-      className="py-20 sm:py-32 bg-gray-900"
+      className="py-12 sm:py-8 bg-gray-900"
     >
       <Container>
         <div className="mx-auto max-w-2xl sm:text-center">
           <h2 className="text-3xl font-medium tracking-tight text-white">
-            Now is the time to build your portfolio.
+            Now is the time to grow your presence.
           </h2>
           <p className="mt-2 text-lg text-gray-400">
             With typical market returns, you have to start young to secure your
