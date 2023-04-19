@@ -19,7 +19,7 @@ export function CallToAction() {
             Connect with us today
           </h2>
           <p className="mt-4 text-lg text-gray-300">
-              Reach out and get the process started, we'll work with you to create a website that best represents your business.
+              Reach out and get the process started, we&apos;ll work with you to create a website that best represents your business.
           </p>
           <form className="mt-8 flex w-full justify-center md:w-auto">
             <TextField

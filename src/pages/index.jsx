@@ -9,7 +9,6 @@ import { Pricing } from '@/components/Pricing'
 import { PrimaryFeatures } from '@/components/PrimaryFeatures'
 import { Reviews } from '@/components/Reviews'
 import { SecondaryFeatures } from '@/components/SecondaryFeatures'
-import ContactForm from '@/components/ContactForm'
 
 export default function Home() {
   return (
@@ -26,7 +25,7 @@ export default function Home() {
           content="delta, website, web developer, tsawwassen, bc, local, seo, web build"
         />
         <meta name="robots" content="index, follow" />
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="language" content="English" />
         <meta property="og:title" content="Web Services in Delta BC" />
         <meta property="og:site_name" content="Delta Web Works" />
