@@ -7,7 +7,9 @@ import { AppStoreLink } from '@/components/AppStoreLink'
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { PhoneFrame } from '@/components/PhoneFrame'
-
+import Image from 'next/future/image'
+import screenshot from 'public/images/screenshot.png'
+import { TextField } from './Fields'
 
 function BackgroundIllustration(props) {
   let id = useId()
@@ -78,18 +80,6 @@ function BackgroundIllustration(props) {
   )
 }
 
-function PlayIcon(props) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" {...props}>
-      <circle cx="12" cy="12" r="11.5" stroke="#D4D4D4" />
-      <path
-        d="M9.5 14.382V9.618a.5.5 0 0 1 .724-.447l4.764 2.382a.5.5 0 0 1 0 .894l-4.764 2.382a.5.5 0 0 1-.724-.447Z"
-        fill="#A3A3A3"
-        stroke="#A3A3A3"
-      />
-    </svg>
-  )
-}
 
 const prices = [
   997.56, 944.34, 972.25, 832.4, 888.76, 834.8, 805.56, 767.38, 861.21, 669.6,
@@ -236,99 +226,10 @@ function Chart({
   )
 }
 
-function AppDemo() {
-  let [activePointIndex, setActivePointIndex] = useState(null)
-  let activePriceIndex = activePointIndex ?? prices.length - 1
-  let activeValue = prices[activePriceIndex]
-  let previousValue = prices[activePriceIndex - 1]
-  let percentageChange =
-    activePriceIndex === 0
-      ? null
-      : ((activeValue - previousValue) / previousValue) * 100
-
-  return (
-    <AppScreen>
-      <AppScreen.Body>
-        <div className="p-4">
-          <div className="flex gap-2">
-            <div className="text-xs leading-6 text-gray-500">
-              Tailwind Labs, Inc.
-            </div>
-            <div className="text-sm text-gray-900">$CSS</div>
-            <svg viewBox="0 0 24 24" className="ml-auto h-6 w-6" fill="none">
-              <path
-                d="M5 12a7 7 0 1 1 14 0 7 7 0 0 1-14 0ZM12 9v6M15 12H9"
-                stroke="#171717"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </div>
-          <div className="mt-3 border-t border-gray-200 pt-5">
-            <div className="flex items-baseline gap-2">
-              <div className="text-2xl tabular-nums tracking-tight text-gray-900">
-                {activeValue.toFixed(2)}
-              </div>
-              <div className="text-sm text-gray-900">USD</div>
-              {percentageChange && (
-                <div
-                  className={clsx(
-                    'ml-auto text-sm tabular-nums tracking-tight',
-                    percentageChange >= 0 ? 'text-cyan-500' : 'text-gray-500'
-                  )}
-                >
-                  {`${
-                    percentageChange >= 0 ? '+' : ''
-                  }${percentageChange.toFixed(2)}%`}
-                </div>
-              )}
-            </div>
-            <div className="mt-6 flex gap-4 text-xs text-gray-500">
-              <div>1D</div>
-              <div>5D</div>
-              <div className="font-semibold text-cyan-600">1M</div>
-              <div>6M</div>
-              <div>1Y</div>
-              <div>5Y</div>
-            </div>
-            <div className="mt-3 rounded-lg bg-gray-50 ring-1 ring-inset ring-black/5">
-              <Chart
-                width={286}
-                height={208}
-                paddingX={16}
-                paddingY={32}
-                activePointIndex={activePointIndex}
-                onChangeActivePointIndex={setActivePointIndex}
-              />
-            </div>
-            <div className="mt-4 rounded-lg bg-cyan-500 py-2 px-4 text-center text-sm font-semibold text-white">
-              Trade
-            </div>
-            <div className="mt-3 divide-y divide-gray-100 text-sm">
-              <div className="flex justify-between py-1">
-                <div className="text-gray-500">Open</div>
-                <div className="font-medium text-gray-900">6,387.55</div>
-              </div>
-              <div className="flex justify-between py-1">
-                <div className="text-gray-500">Closed</div>
-                <div className="font-medium text-gray-900">6,487.09</div>
-              </div>
-              <div className="flex justify-between py-1">
-                <div className="text-gray-500">Low</div>
-                <div className="font-medium text-gray-900">6,322.01</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </AppScreen.Body>
-    </AppScreen>
-  )
-}
 
 export function Hero() {
   return (
-    <div className="overflow-hidden py-20 sm:py-32 lg:pb-32 xl:pb-36 bg-gray-900">
+    <div className="overflow-hidden bg-gray-900 py-12 sm:py-32 lg:pb-32 xl:pb-36">
       <Container>
         <div className="lg:grid lg:grid-cols-12 lg:gap-x-8 lg:gap-y-20">
           <div className="relative z-10 mx-auto max-w-2xl lg:col-span-7 lg:max-w-none lg:pt-6 xl:col-span-6">
@@ -336,29 +237,33 @@ export function Hero() {
               Connect with your local customers, in Delta BC.
             </h1>
             <p className="mt-6 text-lg text-gray-400">
-              Build a online presence you’re proud of, connect with new and existing customers, and maximise your business potential.
+              Build a online presence you’re proud of, connect with new and
+              existing customers, and maximise your business potential.
             </p>
-            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-4">
-              <AppStoreLink />
-              <Button
-                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-                variant="outline"
-              >
-                <PlayIcon className="h-6 w-6 flex-none" />
-                <span className="ml-2.5 text-white">Watch the video</span>
-              </Button>
-            </div>
+            <form className="hidden mt-8 mb-20 lg:flex flex-wrap flex-start gap-x-6 gap-y-4">
+            <TextField
+              type="email"
+              aria-label="Email address"
+              placeholder="Email address"
+              autoComplete="email"
+              required
+              className="w-60 min-w-0 shrink text-white"
+            />
+            <Button type="submit" color="white" className="hover:bg-gray-300 hover:transition-all ease-in-out text-black flex-none">
+              <span className="hidden lg:inline">Get a Quote</span>
+              <span className="lg:hidden">Get a Quote</span>
+            </Button>
+          </form>
           </div>
-          <div className="relative mt-10 sm:mt-20 lg:col-span-5 lg:row-span-2 lg:mt-0 xl:col-span-6">
+          <div className="relative mt-20 sm:mt-20 lg:col-span-5 lg:row-span-2 lg:mt-0 xl:col-span-6">
             <BackgroundIllustration className="absolute left-1/2 top-4 h-[1026px] w-[1026px] -translate-x-1/3 stroke-gray-300/70 [mask-image:linear-gradient(to_bottom,white_20%,transparent_75%)] sm:top-16 sm:-translate-x-1/2 lg:-top-16 lg:ml-12 xl:-top-14 xl:ml-0" />
             <div className="-mx-4 h-[448px] px-9 [mask-image:linear-gradient(to_bottom,white_60%,transparent)] sm:mx-0 lg:absolute lg:-inset-x-10 lg:-top-10 lg:-bottom-20 lg:h-auto lg:px-0 lg:pt-10 xl:-bottom-32">
               <PhoneFrame className="mx-auto max-w-[366px]" priority>
-                <AppDemo />
+                <Image className="-mt-7" src={screenshot} />
               </PhoneFrame>
             </div>
           </div>
-          <div className="relative h-12 -mt-4 lg:col-span-7 lg:mt-0 xl:col-span-6">
-          </div>
+          <div className="relative -mt-4 h-12 lg:col-span-7 lg:mt-0 xl:col-span-6"></div>
         </div>
       </Container>
     </div>
