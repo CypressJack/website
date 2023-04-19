@@ -4,39 +4,39 @@ import { Container } from '@/components/Container'
 
 const features = [
   {
-    name: 'Invest any amount',
+    name: 'Build Local Relationships',
     description:
-      'Whether it’s $1 or $1,000,000, we can put your money to work for you.',
-    icon: DeviceArrowIcon,
-  },
-  {
-    name: 'Build a balanced portfolio',
-    description:
-      'Invest in different industries to find the most opportunities to win huge.',
-    icon: DeviceCardsIcon,
-  },
-  {
-    name: 'Trade in real-time',
-    description:
-      'Get insider tips on big stock moves and act on them within seconds.',
+      'Delta Web Works specializes in providing website’s and tool’s for businesses in Tsawwassen.',
     icon: DeviceClockIcon,
   },
   {
-    name: 'Profit from your network',
+    name: 'Enhance Your Local Presence',
     description:
-      'Invite new insiders to get tips faster and beat even other Pocket users.',
+    'Provide your customer’s the optimal way to find your business in Delta, and grow your network.',
+    icon: DeviceCardsIcon,
+  },
+  {
+    name: 'Reach Your Target Market',
+    description:
+    'Reach doesn’t matter if its not with the right people, build your website around targeting local customers in Tsawwassen, Ladner, and the Greater Vancouver Area.',
     icon: DeviceListIcon,
   },
   {
-    name: 'Encrypted and anonymized',
+    name: 'Rank Higher in Local Searches',
     description:
-      'Cutting-edge security technology that even the NSA doesn’t know about keeps you hidden.',
+      'Optimization plays a huge role in getting your business to the top of search results and Delta Web Works can improve your rank locally.',
+    icon: DeviceArrowIcon,
+  },
+  {
+    name: 'Local SEO Optimization',
+    description:
+      'SEO can make or break your website, well make sure your business has the best possible rank of local search results in Delta, BC.',
     icon: DeviceLockIcon,
   },
   {
-    name: 'Portfolio tracking',
+    name: 'Expertise in Local Market',
     description:
-      'Watch your investments grow exponentially, leaving other investors in the dust.',
+      'Expand your operations in the market that matters to you, and get more clients in Tsawwassen, BC.',
     icon: DeviceChartIcon,
   },
 ]
@@ -194,13 +194,12 @@ export function SecondaryFeatures() {
       className="py-20 sm:py-32 bg-gray-900"
     >
       <Container>
-        <div className="mx-auto max-w-2xl sm:text-center">
+        <div className="mx-auto max-w-3xl sm:text-center">
           <h2 className="text-3xl font-medium tracking-tight text-white">
-            Now is the time to build your portfolio.
+          Optimize for local traffic, and see the results grow.
           </h2>
           <p className="mt-2 text-lg text-gray-400">
-            With typical market returns, you have to start young to secure your
-            future. With Pocket, it’s never too late to build your nest egg.
+          Rank at the top of local search results in Tsawwassen & Ladner, BC. Expand your reach in the region you want to work in, with customers you want to connect with.
           </p>
         </div>
         <ul

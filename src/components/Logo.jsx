@@ -8,11 +8,11 @@ export function Logomark(props) {
 
 export function Logo(props) {
   return (
-    <div className="flex flex-row items-end text-2xl font-bold text-white">
-      <Logomark width="40" height="40" className="fill-cyan-500" />
+    <div className="flex flex-row items-center text-2xl font-bold text-white">
+      <Logomark width="40" height="40" className="fill-indigo-500" />
       <h2
         className="ml-4 mb-0"
-      ></h2>
+      >Delta Web Works</h2>
     </div>
   )
 }

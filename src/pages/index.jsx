@@ -15,20 +15,41 @@ export default function Home() {
     <>
       <Head>
         <title>Web Services in Delta BC</title>
+        <meta name="title" content="Web Services in Delta BC" />
         <meta
           name="description"
-          content="By leveraging insights from our network of industry insiders, you’ll know exactly when to buy to maximize profit, and exactly when to sell to avoid painful losses."
+          content="Rank at the top of local search results in Tsawwassen &amp; Ladner, BC. Expand your reach in the region you want to work in, with customers you want to connect with."
         />
+        <meta
+          name="keywords"
+          content="delta, website, web developer, tsawwassen, bc, local, seo, web build"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="language" content="English" />
+        <meta property="og:title" content="Web Services in Delta BC" />
+        <meta property="og:site_name" content="Delta Web Works" />
+        <meta property="og:url" content="deltaweb.works" />
+        <meta
+          property="og:description"
+          content="Rank at the top of local search results in Tsawwassen & Ladner, BC. Expand your reach in the region you want to work in, with customers you want to connect with."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          content="https://deltaweb.works/images/deltawebworks.png"
+        ></meta>
       </Head>
       <Header />
       <main>
         <Hero />
-        <PrimaryFeatures />
+        {/* <PrimaryFeatures /> */}
         <SecondaryFeatures />
         <CallToAction />
-        <Reviews />
-        <Pricing />
-        <Faqs />
+        {/* <ContactForm/> */}
+        {/* <Reviews /> */}
+        {/* <Pricing /> */}
+        {/* <Faqs /> */}
       </main>
       <Footer />
     </>
